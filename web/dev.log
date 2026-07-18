@@ -1,0 +1,162 @@
+
+> pulse-web@0.1.0 dev
+> vite --port 5199
+
+
+  VITE v6.4.3  ready in 277 ms
+
+  ➜  Local:   http://localhost:5199/
+  ➜  Network: use --host to expose
+6:05:22 PM [vite] (client) hmr update /src/styles.css
+6:08:25 PM [vite] (client) hmr update /src/App.tsx
+6:08:53 PM [vite] (client) hmr update /src/styles.css
+8:32:47 AM [vite] (client) hmr update /src/App.tsx
+8:33:55 AM [vite] (client) hmr update /src/App.tsx
+8:35:38 AM [vite] (client) hmr update /src/HowItWorks.tsx
+8:54:01 AM [vite] (client) hmr update /src/styles.css
+8:56:43 AM [vite] (client) hmr update /src/App.tsx
+9:04:36 AM [vite] (client) hmr update /src/styles.css
+9:29:11 AM [vite] (client) hmr update /src/App.tsx
+9:31:41 AM [vite] (client) hmr update /src/App.tsx
+9:38:15 AM [vite] (client) hmr update /src/App.tsx
+9:38:26 AM [vite] (client) ✨ new dependencies optimized: react-router-dom
+9:38:26 AM [vite] (client) ✨ optimized dependencies changed. reloading
+9:41:36 AM [vite] (client) page reload src/main.tsx
+9:42:20 AM [vite] (client) hmr update /src/styles.css
+10:55:37 AM [vite] (client) hmr update /src/App.tsx
+10:56:59 AM [vite] (client) hmr update /src/App.tsx
+2:41:39 PM [vite] (client) hmr update /src/HowItWorks.tsx
+2:45:04 PM [vite] (client) hmr update /src/styles.css
+2:50:03 PM [vite] (client) hmr update /src/App.tsx
+2:51:47 PM [vite] (client) hmr update /src/ClaimPage.tsx
+2:52:32 PM [vite] (client) hmr update /src/styles.css
+2:53:52 PM [vite] (client) hmr update /src/ClaimPage.tsx
+3:02:16 PM [vite] (client) hmr update /src/AppLayout.tsx
+3:04:01 PM [vite] (client) hmr update /src/components.tsx
+3:04:02 PM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:04:02 PM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:05:47 PM [vite] (client) hmr update /src/AppPages.tsx
+3:08:31 PM [vite] (client) hmr update /src/styles.css
+1:57:56 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+1:57:56 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:57:56 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:57:59 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+1:58:00 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:00 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:58:12 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+1:58:12 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:12 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:58:14 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+1:58:14 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:14 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:58:36 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+1:58:36 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:36 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:58:58 AM [vite] (client) hmr update /src/components.tsx
+1:58:58 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:58 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:58:58 AM [vite] (client) hmr update /src/components.tsx
+1:58:59 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:58:59 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:59:07 AM [vite] (client) hmr update /src/components.tsx
+1:59:07 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:59:07 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+1:59:37 AM [vite] (client) hmr update /src/ClaimPage.tsx
+1:59:52 AM [vite] (client) hmr update /src/ClaimPage.tsx
+2:00:16 AM [vite] (client) hmr update /src/AppPages.tsx
+2:00:18 AM [vite] (client) hmr update /src/AppPages.tsx
+2:00:46 AM [vite] (client) hmr update /src/AppPages.tsx
+2:00:52 AM [vite] (client) hmr update /src/AppPages.tsx
+2:01:08 AM [vite] (client) hmr update /src/styles.css
+3:18:02 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+3:18:03 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:18:03 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:19:45 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/components.tsx, /src/AppPages.tsx
+3:19:46 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:19:46 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:21:42 AM [vite] (client) hmr update /src/components.tsx
+3:21:42 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh (export removed)
+3:21:42 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:22:31 AM [vite] (client) hmr update /src/components.tsx
+3:22:31 AM [vite] Internal server error: /private/tmp/pulse/web/src/components.tsx: Unexpected token (270:0)
+
+  268 |     })
+  269 |   }
+> 270 |
+      | ^
+  Plugin: vite:react-babel
+  File: /private/tmp/pulse/web/src/components.tsx:270:0
+  268|      })
+  269|    }
+  270|  
+     |  ^
+      at constructor (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:365:19)
+      at TypeScriptParserMixin.raise (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:6616:19)
+      at TypeScriptParserMixin.unexpected (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:6636:16)
+      at TypeScriptParserMixin.parseExprAtom (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:11459:22)
+      at TypeScriptParserMixin.parseExprAtom (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:4776:20)
+      at TypeScriptParserMixin.parseExprSubscripts (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:11098:23)
+      at TypeScriptParserMixin.parseUpdate (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:11083:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:11063:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9854:18)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10916:61)
+      at TypeScriptParserMixin.parseExprOps (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10921:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10898:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10848:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9803:20)
+      at TypeScriptParserMixin.parseExpressionBase (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10801:23)
+      at /private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10797:39
+      at TypeScriptParserMixin.allowInAnd (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12438:16)
+      at TypeScriptParserMixin.parseExpression (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:10797:17)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12912:23)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12764:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13333:61)
+      at TypeScriptParserMixin.parseBlockBody (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseBlock (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13314:10)
+      at TypeScriptParserMixin.parseFunctionBody (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12117:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12103:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9189:18)
+      at /private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13462:12
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12420:14)
+      at TypeScriptParserMixin.parseFunction (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13461:10)
+      at TypeScriptParserMixin.parseFunctionStatement (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13142:17)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12808:21)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12784:17)
+      at TypeScriptParserMixin.parseStatementListItem (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12764:17)
+      at TypeScriptParserMixin.parseExportDeclaration (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13951:17)
+      at TypeScriptParserMixin.parseExportDeclaration (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9646:85)
+      at TypeScriptParserMixin.maybeParseExportDeclaration (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13910:31)
+      at TypeScriptParserMixin.parseExport (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13829:29)
+      at TypeScriptParserMixin.parseExport (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9402:20)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12895:27)
+      at TypeScriptParserMixin.parseStatementContent (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:9525:18)
+      at TypeScriptParserMixin.parseStatementLike (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12784:17)
+      at TypeScriptParserMixin.parseModuleItem (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12761:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13333:36)
+      at TypeScriptParserMixin.parseBlockBody (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:13326:10)
+      at TypeScriptParserMixin.parseProgram (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12639:10)
+      at TypeScriptParserMixin.parseTopLevel (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:12629:25)
+      at TypeScriptParserMixin.parse (/private/tmp/pulse/web/node_modules/@babel/parser/lib/index.js:14505:25)
+3:23:42 AM [vite] (client) hmr update /src/components.tsx
+3:23:42 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh (new export)
+3:23:42 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/DashboardPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:31:06 AM [vite] (client) hmr update /src/DashboardPage.tsx
+3:31:51 AM [vite] (client) hmr update /src/AppPages.tsx
+3:33:15 AM [vite] (client) hmr update /src/ClaimPage.tsx
+3:33:15 AM [vite] (client) hmr update /src/ClaimPage.tsx
+3:34:06 AM [vite] (client) hmr update /src/App.tsx
+3:34:22 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/components.tsx, /src/AppPages.tsx
+3:34:22 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:34:22 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:35:28 AM [vite] (client) hmr update /src/styles.css
+3:46:36 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/components.tsx, /src/AppPages.tsx
+3:46:36 AM [vite] (client) hmr update /src/App.tsx, /src/ClaimPage.tsx, /src/components.tsx, /src/AppPages.tsx
+3:46:36 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh ("INTERVALS" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+3:46:36 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:47:11 AM [vite] (client) hmr update /src/components.tsx
+3:47:11 AM [vite] (client) hmr invalidate /src/components.tsx Could not Fast Refresh (export removed)
+3:47:11 AM [vite] (client) hmr update /src/ClaimPage.tsx, /src/AppPages.tsx, /src/AppLayout.tsx
+3:47:59 AM [vite] (client) hmr update /src/ClaimPage.tsx

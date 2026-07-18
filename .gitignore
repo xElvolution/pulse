@@ -1,0 +1,18 @@
+# --- root ---
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# --- contracts (Foundry) ---
+contracts/cache/
+contracts/out/
+contracts/broadcast/
+
+# --- web ---
+web/node_modules/
+web/dist/
+web/*.local
+
+# --- watcher ---
+watcher/node_modules/

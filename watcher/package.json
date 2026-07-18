@@ -1,0 +1,14 @@
+{
+  "name": "pulse-watcher",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "node watcher.js",
+    "verifier": "node verifier.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16",
+    "viem": "^2.28.0"
+  }
+}
