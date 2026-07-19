@@ -118,7 +118,7 @@ forge script script/Deploy.s.sol \
 | | |
 |---|---|
 | Network | Monad Testnet (chain id 10143) |
-| Address | [`0x25419c9fe55d69924fb2d19692c9913a6768ecc4`](https://testnet.monadexplorer.com/address/0x25419c9fe55d69924fb2d19692c9913a6768ecc4) |
+| Address | [`0xbd6f77e3958c378e9a2264b82d875e5dd669eba2`](https://testnet.monadexplorer.com/address/0xbd6f77e3958c378e9a2264b82d875e5dd669eba2) |
 | Verifier | `0x4d33578Edb7193Cf9c6F2262f06d8d94196E9845` |
 
 Key surface: `createWill` · `beat` / `beatAll` · `deposit` · `withdraw` · `close` · `claim` · `claimTo` · views for owners, heirs, and countdowns.

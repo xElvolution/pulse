@@ -36,7 +36,7 @@ contract PulseWill {
         string note;         // message revealed to beneficiaries on flatline
     }
 
-    uint64 public constant MIN_INTERVAL = 1 minutes;
+    uint64 public constant MIN_INTERVAL = 15 seconds;
     uint64 public constant MAX_INTERVAL = 365 days;
     uint256 public constant MAX_BENEFICIARIES = 20;
 

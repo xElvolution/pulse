@@ -10,6 +10,7 @@ const ZERO = '0x0000000000000000000000000000000000000000'
 export const isAddr = (a: string) => /^0x[a-fA-F0-9]{40}$/.test(a)
 
 export const INTERVALS = [
+  { label: '15 seconds (demo)', secs: 15n },
   { label: '5 minutes (demo)', secs: 300n },
   { label: '1 day', secs: 86400n },
   { label: '1 week', secs: 604800n },
