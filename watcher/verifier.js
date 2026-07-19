@@ -21,6 +21,7 @@ import crypto from 'node:crypto'
 import { createPublicClient, createWalletClient, http as viemHttp, defineChain } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
 import nodemailer from 'nodemailer'
+import { renderEmail } from './email-template.js'
 
 const RPC_URL = process.env.RPC_URL ?? 'https://testnet-rpc.monad.xyz'
 const PULSE_ADDRESS = process.env.PULSE_ADDRESS
@@ -109,7 +110,20 @@ async function requestCode({ willId, index }) {
     `Someone (hopefully you) is claiming the share left for ${b.name || 'you'}.\n` +
     `The code expires in 10 minutes. If this wasn't you, ignore this email.`
   if (transporter) {
-    await transporter.sendMail({ from: process.env.SMTP_USER, to: b.email, subject: 'Your Pulse claim code', text })
+    await transporter.sendMail({
+      from: process.env.MAIL_FROM ?? process.env.SMTP_USER,
+      to: b.email,
+      subject: 'Your Pulse claim code',
+      text,
+      html: renderEmail({
+        tone: 'coral',
+        title: 'Your claim code',
+        intro: `Someone (hopefully you) is claiming the share left for ${b.name || 'you'}. Enter this code on the claim page to prove it is you:`,
+        stat: code,
+        statLabel: 'verification code · expires in 10 minutes',
+        footer: "If this wasn't you, you can safely ignore this email. The funds cannot move without this code.",
+      }),
+    })
   } else {
     console.log(`[dry-run OTP] to=${b.email} code=${code}`)
   }

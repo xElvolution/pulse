@@ -12,13 +12,14 @@
  * Env:
  *   RPC_URL          Monad RPC (default: testnet)
  *   PULSE_ADDRESS    deployed PulseWill address (required)
- *   OWNER_EMAIL      where owner reminders go (demo: your own inbox)
+ *   OWNER_EMAIL      where owner reminders go
  *   SMTP_HOST/PORT/USER/PASS   mail credentials (e.g. Gmail app password)
  *   POLL_SECONDS     poll cadence (default 60)
  *   WARN_FRACTION    warn when remaining/interval falls below this (default 0.25)
  */
 import { createPublicClient, http, formatEther } from 'viem'
 import nodemailer from 'nodemailer'
+import { renderEmail } from './email-template.js'
 
 const RPC_URL = process.env.RPC_URL ?? 'https://testnet-rpc.monad.xyz'
 const PULSE_ADDRESS = process.env.PULSE_ADDRESS
@@ -60,7 +61,6 @@ const abi = [
         { name: 'wallet', type: 'address' },
         { name: 'allocation', type: 'uint256' },
         { name: 'claimed', type: 'uint256' },
-        { name: 'codeHash', type: 'bytes32' },
         { name: 'name', type: 'string' },
         { name: 'email', type: 'string' },
       ],
@@ -80,14 +80,14 @@ const transporter = hasSmtp
     })
   : null
 
-async function send(to, subject, text) {
+async function send(to, subject, text, html) {
   if (!to) return
   if (!transporter) {
     console.log(`[dry-run email] to=${to} subject="${subject}"\n${text}\n`)
     return
   }
   try {
-    await transporter.sendMail({ from: process.env.SMTP_USER, to, subject, text })
+    await transporter.sendMail({ from: process.env.MAIL_FROM ?? process.env.SMTP_USER, to, subject, text, html })
     console.log(`[sent] to=${to} "${subject}"`)
   } catch (e) {
     console.error(`[mail error] ${e.message}`)
@@ -138,6 +138,17 @@ async function tick() {
           `Your allocation: ${formatEther(b.allocation)} MON\n\n` +
           `Visit ${APP_URL}/claim and search your name and email to claim it.\n` +
           `No crypto knowledge needed: the page will walk you through it.`,
+          renderEmail({
+            tone: 'coral',
+            title: `Something was left for you${b.name ? ', ' + b.name : ''}.`,
+            intro: `A Pulse will that names you has unlocked. Someone made sure this would reach you.`,
+            stat: `${formatEther(b.allocation)} MON`,
+            statLabel: 'set aside for you',
+            note: w.note || undefined,
+            ctaText: 'Claim what is yours',
+            ctaUrl: `${APP_URL}/claim`,
+            footer: 'No crypto knowledge needed: the page will walk you through it, step by step.',
+          }),
         )
       }
       console.log(`[flatline] will #${id}, notified ${bens.filter((b) => b.email).length} beneficiaries`)
@@ -154,6 +165,16 @@ async function tick() {
         `in about ${remaining < 3600 ? Math.round(remaining / 60) + ' minutes' : hours + ' hours'}.\n\n` +
         `Still here? One click resets it: ${APP_URL}/app\n\n` +
         `Pool: ${formatEther(w.balance)} MON. Nothing moves until the timer actually lapses.`,
+        renderEmail({
+          tone: 'coral',
+          title: 'Are you still there?',
+          intro: `Your will #${id} has been quiet for a while. If nothing resets it, it unlocks for your beneficiaries in about ${remaining < 3600 ? Math.round(remaining / 60) + ' minutes' : hours + ' hours'}.`,
+          stat: `${formatEther(w.balance)} MON`,
+          statLabel: 'in the pool',
+          ctaText: 'One click resets it',
+          ctaUrl: `${APP_URL}/app`,
+          footer: 'Nothing moves until the timer actually lapses. This is just your heartbeat asking for a beat.',
+        }),
       )
       console.log(`[warned] will #${id}, ${remaining}s left`)
     } else {
