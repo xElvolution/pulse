@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAccount } from 'wagmi'
-import { useAuth } from './auth'
+import { usePrivy } from '@privy-io/react-auth'
 import { formatEther } from 'viem'
 import gsap from 'gsap'
 import Ekg from './Ekg'
@@ -258,7 +258,7 @@ function FoundWill({ will, indexes, refetch }: { will: Will; indexes: number[]; 
   const { secondsLeft } = useCountdown(will)
   const symbol = useTokenSymbol(will.token)
   const { isConnected, address } = useAccount()
-  const { login } = useAuth()
+  const { login } = usePrivy()
   const tx = usePulseWrite(refetch)
   const flatlined = !will.closed && secondsLeft === 0
 
