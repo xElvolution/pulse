@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useAccount, useDisconnect } from 'wagmi'
-import { usePrivy } from '@privy-io/react-auth'
+import { useAuth } from './auth'
 import gsap from 'gsap'
 import Orb from './Orb'
 import { short } from './components'
@@ -10,7 +10,7 @@ import { short } from './components'
  *  The menu is ALWAYS visible. Only wallet-required pages show the connect gate. */
 export default function AppLayout({ vitality }: { vitality: number }) {
   const { address, isConnected } = useAccount()
-  const { login, logout } = usePrivy()
+  const { login, logout } = useAuth()
   const { disconnect } = useDisconnect()
   const location = useLocation()
   const mainRef = useRef<HTMLDivElement>(null)
