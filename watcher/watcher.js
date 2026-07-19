@@ -1,12 +1,12 @@
 /**
- * Pulse watcher — the "are you still there?" email service.
+ * Pulse watcher: the "are you still there?" email service.
  *
  * Polls every will on the PulseWill contract. When a will's remaining time
  * drops below the warning threshold, emails the OWNER a reminder to check in.
  * When a will flatlines, emails each BENEFICIARY that their share is claimable.
  *
  * This service holds no keys and has no onchain power. If it dies, the
- * protocol still works — beneficiaries can always check the site directly.
+ * protocol still works - beneficiaries can always check the site directly.
  * It is purely a courtesy layer, which is exactly what an email should be.
  *
  * Env:
@@ -137,7 +137,7 @@ async function tick() {
           `A Pulse will that names you has unlocked.\n\n` +
           `Your allocation: ${formatEther(b.allocation)} MON\n\n` +
           `Visit ${APP_URL}/claim and search your name and email to claim it.\n` +
-          `No crypto knowledge needed — the page will walk you through it.`,
+          `No crypto knowledge needed: the page will walk you through it.`,
         )
       }
       console.log(`[flatline] will #${id}, notified ${bens.filter((b) => b.email).length} beneficiaries`)

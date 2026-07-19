@@ -1,5 +1,5 @@
 /**
- * Pulse verifier — email-OTP claims for wallet-less heirs.
+ * Pulse verifier: email-OTP claims for wallet-less heirs.
  *
  * Flow: heir clicks "email me a code" → we read their email FROM THE CONTRACT
  * (never from the request), send a 6-digit OTP, they return code + recipient

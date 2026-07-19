@@ -6,12 +6,12 @@ interface IERC20 {
     function transferFrom(address from, address to, uint256 amount) external returns (bool);
 }
 
-/// @title PulseWill — a multi-beneficiary dead man's switch.
+/// @title PulseWill: a multi-beneficiary dead man's switch.
 /// @notice You fund a will and name the people you want to leave it to, each with
 ///         their own allocation. The will is a programmable holder you control like
 ///         a wallet: deposit and withdraw freely while you're alive, and every action
 ///         resets your inactivity clock. Go silent past your chosen interval and each
-///         beneficiary can claim their allocation from the pool — nothing moves before
+///         beneficiary can claim their allocation from the pool - nothing moves before
 ///         then, and you can always pull your funds back out while active.
 /// @dev    Claims draw from one shared pool capped at each beneficiary's allocation.
 ///         Set every allocation to the full balance for first-come-first-served;
@@ -87,7 +87,7 @@ contract PulseWill {
     /// @param people The beneficiaries and their allocations. Each needs a wallet
     ///        address or an email (for verified email claims). Allocations may sum to
     ///        more than `amount` (first-come-first-served) or exactly `amount`
-    ///        (rationed) — your choice.
+    ///        (rationed) - your choice.
     function createWill(
         address token,
         uint256 amount,

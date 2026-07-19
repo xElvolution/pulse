@@ -1,7 +1,7 @@
 # Contributing to Pulse
 
-Thanks for your interest. Pulse handles something unusually sensitive — money that people are
-leaving to their families — so contributions are held to a simple standard: **correctness over
+Thanks for your interest. Pulse handles something unusually sensitive - money that people are
+leaving to their families - so contributions are held to a simple standard: **correctness over
 cleverness, honesty over hype.**
 
 ## Getting set up
@@ -37,7 +37,7 @@ cd contracts && forge script script/Deploy.s.sol --rpc-url http://localhost:8545
 ```
 
 Tip: create a will on the **5 minutes (demo)** interval so you can watch the whole
-lifecycle — alive → critical → flatline → claim — in one sitting.
+lifecycle - alive → critical → flatline → claim - in one sitting.
 
 ## Ground rules
 
@@ -58,7 +58,7 @@ lifecycle — alive → critical → flatline → claim — in one sitting.
 - `npx tsc --noEmit` must be clean.
 - Match the existing visual language (the CSS variables in `styles.css`, the serif/mono/sans
   trio, the heartbeat metaphor). New UI that fights the design system will be asked to adapt.
-- Anything that touches claiming must degrade gracefully for a non-crypto user — that persona
+- Anything that touches claiming must degrade gracefully for a non-crypto user - that persona
   (a grieving relative who has never used a wallet) is the bar for every claim-flow change.
 
 ### Services (`watcher/`)
@@ -73,21 +73,21 @@ lifecycle — alive → critical → flatline → claim — in one sitting.
 1. Fork, branch from `main` (`feat/...`, `fix/...`), keep PRs focused on one thing.
 2. Explain *why*, not just what. If it changes trust assumptions, say so prominently.
 3. Make sure `forge test` and `npx tsc --noEmit` pass before requesting review.
-4. Security-sensitive findings: please **do not open a public issue** — see below.
+4. Security-sensitive findings: please **do not open a public issue** - see below.
 
 ## Reporting security issues
 
 If you find a vulnerability that could let someone claim funds early, claim another heir's
 share, or block a legitimate claim, email the maintainers privately (address in the repo
 profile) instead of filing an issue. We'll acknowledge within 48 hours. Give us a reasonable
-window to deploy mitigations before public disclosure — people may have real funds behind this.
+window to deploy mitigations before public disclosure - people may have real funds behind this.
 
 ## Ideas we'd love help with
 
-- **zkEmail / DKIM-proof claims** — remove the trusted verifier for email heirs entirely.
-- **EOA activity keeper** — watch the owner's main wallet and beat on their behalf.
-- **Token decimals handling** — proper `decimals()` support in the UI for non-18 tokens.
-- **Localization** — the claim flow especially; families are global.
-- **Watcher redundancy** — at-least-once reminder delivery without duplicate spam.
+- **zkEmail / DKIM-proof claims** - remove the trusted verifier for email heirs entirely.
+- **EOA activity keeper** - watch the owner's main wallet and beat on their behalf.
+- **Token decimals handling** - proper `decimals()` support in the UI for non-18 tokens.
+- **Localization** - the claim flow especially; families are global.
+- **Watcher redundancy** - at-least-once reminder delivery without duplicate spam.
 
 *Every block is a heartbeat.* ♥

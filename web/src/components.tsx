@@ -80,7 +80,7 @@ export function WillCard({
         </div>
         <div className="kv">
           <span className="k">Time left</span>
-          <span className="v big">{will.closed ? '—' : fmtDuration(secondsLeft)}</span>
+          <span className="v big">{will.closed ? '-' : fmtDuration(secondsLeft)}</span>
         </div>
         <div className="kv">
           <span className="k">Heirs</span>
@@ -320,7 +320,7 @@ export function CreatePanel({
       {mode === 'ration' && (
         <div className={`alloc-summary ${overAllocated ? 'over' : ''}`}>
           Allocated {allocSum} / {poolNum} {symbol}
-          {overAllocated && ' — shares exceed the pool'}
+          {overAllocated && ' - shares exceed the pool'}
         </div>
       )}
 
@@ -387,7 +387,7 @@ function ReconfirmModal({
         <h3 className="code-title">Confirm every detail</h3>
         <p className="claim-hint">
           This is the important step. Once created, these details govern who receives your funds
-          if your heartbeat stops. Wallet addresses and amounts cannot be edited later — only
+          if your heartbeat stops. Wallet addresses and amounts cannot be edited later - only
           topped up, withdrawn, or closed. Read carefully.
         </p>
 

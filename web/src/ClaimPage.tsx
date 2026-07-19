@@ -218,7 +218,7 @@ function EmailClaim({ will, index, payout, symbol, email }: {
       {step === 'start' && (
         <>
           <p className="claim-hint">
-            This share is claimed by proving you own <b>{masked}</b>. We email you a code —
+            This share is claimed by proving you own <b>{masked}</b>. We email you a code -
             no wallet or crypto knowledge needed.
           </p>
           <button className="btn primary" disabled={busy} onClick={requestCode}>
@@ -304,7 +304,7 @@ function FoundWill({ will, indexes, refetch }: { will: Will; indexes: number[]; 
         return (
           <div key={i} className="vault-actions" style={{ display: 'grid', gap: '0.75rem', justifyItems: 'start' }}>
             <p className="claim-hint">
-              <b>{b.name || `Heir ${i + 1}`}</b> — allocated {formatEther(b.allocation)} {symbol}
+              <b>{b.name || `Heir ${i + 1}`}</b> - allocated {formatEther(b.allocation)} {symbol}
               {b.claimed > 0n && `, ${formatEther(b.claimed)} already claimed`}.
             </p>
             {fullyClaimed ? (
