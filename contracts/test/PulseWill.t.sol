@@ -220,4 +220,14 @@ contract PulseWillTest is Test {
         vm.expectRevert(PulseWill.BadAmount.selector);
         pulse.withdraw(id, amount + 1);
     }
+
+    function test_setVerifier_guardianRotates() public {
+        address newVerifier = makeAddr("rotated");
+        vm.expectRevert(PulseWill.NotVerifier.selector);
+        vm.prank(alice);
+        pulse.setVerifier(newVerifier);
+
+        pulse.setVerifier(newVerifier); // test contract deployed it => guardian
+        assertEq(pulse.verifier(), newVerifier);
+    }
 }

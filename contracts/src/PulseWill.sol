@@ -44,7 +44,13 @@ contract PulseWill {
     /// @notice Service that performs email OTP verification for wallet-less heirs.
     ///         It can only direct an ALREADY-UNLOCKED email-heir share to a recipient;
     ///         it cannot touch wallet-based heirs, live wills, or change allocations.
-    address public immutable verifier;
+    ///         Rotatable by the guardian so email heirs are never stranded if the
+    ///         verifier key is lost or compromised.
+    address public verifier;
+
+    /// @notice May rotate the verifier and nothing else. Cannot touch funds,
+    ///         wills, or claim logic.
+    address public immutable guardian;
 
     uint256 public nextWillId;
     mapping(uint256 => Will) public wills;
@@ -58,6 +64,7 @@ contract PulseWill {
     event Withdrawn(uint256 indexed id, uint256 amount, uint256 newBalance);
     event Claimed(uint256 indexed id, uint256 indexed index, address indexed to, uint256 amount);
     event Closed(uint256 indexed id, uint256 refunded);
+    event VerifierChanged(address verifier);
 
     error NotOwner();
     error StillAlive();
@@ -72,6 +79,14 @@ contract PulseWill {
 
     constructor(address _verifier) {
         verifier = _verifier;
+        guardian = msg.sender;
+    }
+
+    /// @notice Rotate the verifier service key. Guardian-only.
+    function setVerifier(address _verifier) external {
+        if (msg.sender != guardian) revert NotVerifier();
+        verifier = _verifier;
+        emit VerifierChanged(_verifier);
     }
 
     // ---- inputs ----
