@@ -49,6 +49,7 @@ const abi = [
         { name: 'beats', type: 'uint32' },
         { name: 'closed', type: 'bool' },
         { name: 'note', type: 'string' },
+        { name: 'ownerEmail', type: 'string' },
       ],
     }],
   },
@@ -159,7 +160,7 @@ async function tick() {
       flatlined.delete(id) // they might have revived since a past flatline
       const hours = Math.max(1, Math.round(remaining / 3600))
       await send(
-        OWNER_EMAIL,
+        w.ownerEmail || OWNER_EMAIL,
         `Are you still there? Your Pulse will #${id} flatlines soon`,
         `Your will #${id} has been inactive and will unlock for your beneficiaries ` +
         `in about ${remaining < 3600 ? Math.round(remaining / 60) + ' minutes' : hours + ' hours'}.\n\n` +

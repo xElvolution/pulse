@@ -194,6 +194,7 @@ export function CreatePanel({
   const [mode, setMode] = useState<'fcfs' | 'ration'>('fcfs')
   const [interval, setInterval_] = useState(INTERVALS[0].secs)
   const [note, setNote] = useState('')
+  const [ownerEmail, setOwnerEmail] = useState('')
   const [confirming, setConfirming] = useState(false)
 
   const tx = usePulseWrite(() => {
@@ -243,6 +244,7 @@ export function CreatePanel({
       amount: parseEther(amount),
       interval,
       note,
+      ownerEmail: ownerEmail.trim().toLowerCase(),
       people,
     })
   }
@@ -332,6 +334,16 @@ export function CreatePanel({
             <option key={iv.label} value={iv.secs.toString()}>{iv.label}</option>
           ))}
         </select>
+      </label>
+
+      <label>
+        Your email, so we can warn you before your will unlocks
+        <input
+          type="email"
+          placeholder="you@example.com"
+          value={ownerEmail}
+          onChange={(e) => setOwnerEmail(e.target.value)}
+        />
       </label>
 
       <label>

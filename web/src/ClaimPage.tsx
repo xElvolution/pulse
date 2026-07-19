@@ -160,7 +160,7 @@ function Sonar({ found, searching }: { found: number; searching: boolean }) {
 
 const ZERO = '0x0000000000000000000000000000000000000000'
 
-const VERIFIER_API = import.meta.env.VITE_VERIFIER_API ?? 'http://localhost:8787'
+const VERIFIER_API = import.meta.env.VITE_VERIFIER_API ?? '/api'
 
 /** Email-verified claim: request a code, prove the inbox, paste any address. */
 function EmailClaim({ will, index, payout, symbol, email }: {
@@ -172,6 +172,7 @@ function EmailClaim({ will, index, payout, symbol, email }: {
   const [busy, setBusy] = useState(false)
   const [err, setErr] = useState('')
   const [txHash, setTxHash] = useState('')
+  const [ticket, setTicket] = useState('')
 
   const post = async (path: string, body: object) => {
     const res = await fetch(`${VERIFIER_API}${path}`, {
@@ -187,7 +188,8 @@ function EmailClaim({ will, index, payout, symbol, email }: {
   const requestCode = async () => {
     setBusy(true); setErr('')
     try {
-      await post('/request-code', { willId: will.id.toString(), index })
+      const data = await post('/request-code', { willId: will.id.toString(), index })
+      setTicket(data.ticket ?? '')
       setStep('code')
     } catch (e) { setErr((e as Error).message) } finally { setBusy(false) }
   }
@@ -195,7 +197,7 @@ function EmailClaim({ will, index, payout, symbol, email }: {
   const submitClaim = async () => {
     setBusy(true); setErr('')
     try {
-      const data = await post('/claim', { willId: will.id.toString(), index, code: code.trim(), recipient: recipient.trim() })
+      const data = await post('/claim', { willId: will.id.toString(), index, code: code.trim(), recipient: recipient.trim(), ticket })
       setTxHash(data.txHash ?? '')
       setStep('done')
     } catch (e) { setErr((e as Error).message) } finally { setBusy(false) }

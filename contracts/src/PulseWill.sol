@@ -34,6 +34,7 @@ contract PulseWill {
         uint32 beats;        // lifetime activity count, for the UI
         bool closed;         // owner withdrew everything / wound it down
         string note;         // message revealed to beneficiaries on flatline
+        string ownerEmail;   // where "are you still there?" reminders go (optional)
     }
 
     uint64 public constant MIN_INTERVAL = 15 seconds;
@@ -93,6 +94,7 @@ contract PulseWill {
         uint256 amount,
         uint64 interval,
         string calldata note,
+        string calldata ownerEmail,
         BeneficiaryInput[] calldata people
     ) external payable returns (uint256 id) {
         if (interval < MIN_INTERVAL || interval > MAX_INTERVAL) revert BadInterval();
@@ -114,6 +116,7 @@ contract PulseWill {
         w.lastActive = uint64(block.timestamp);
         w.beats = 1;
         w.note = note;
+        w.ownerEmail = ownerEmail;
 
         for (uint256 i = 0; i < people.length; i++) {
             BeneficiaryInput calldata p = people[i];

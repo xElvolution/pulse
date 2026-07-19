@@ -211,10 +211,11 @@ export function usePulseWrite(onConfirmed?: () => void) {
     amount: bigint
     interval: bigint
     note: string
+    ownerEmail: string
     people: BeneficiaryInput[]
   }) => {
-    const { token, amount, interval, note, people } = params
-    const args = [token, amount, interval, note, people] as const
+    const { token, amount, interval, note, ownerEmail, people } = params
+    const args = [token, amount, interval, note, ownerEmail, people] as const
     if (token !== NATIVE) {
       setApproving(true)
       try {

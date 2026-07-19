@@ -25,7 +25,7 @@ contract PulseWillTest is Test {
         p[0] = PulseWill.BeneficiaryInput(max, amount, "Maxwell", "max@mail.com");
         p[1] = PulseWill.BeneficiaryInput(anna, amount, "Anna", "anna@mail.com");
         vm.prank(alice);
-        id = pulse.createWill{value: amount}(address(0), amount, interval, "love you both", p);
+        id = pulse.createWill{value: amount}(address(0), amount, interval, "love you both", "owner@example.com", p);
     }
 
     // build a rationed pool: allocations split the balance
@@ -37,7 +37,7 @@ contract PulseWillTest is Test {
         p[0] = PulseWill.BeneficiaryInput(max, aMax, "Maxwell", "");
         p[1] = PulseWill.BeneficiaryInput(anna, aAnna, "Anna", "");
         vm.prank(alice);
-        id = pulse.createWill{value: total}(address(0), total, interval, "", p);
+        id = pulse.createWill{value: total}(address(0), total, interval, "", "", p);
     }
 
     function test_create_storesBeneficiaries() public {
@@ -51,7 +51,7 @@ contract PulseWillTest is Test {
         PulseWill.BeneficiaryInput[] memory p = new PulseWill.BeneficiaryInput[](0);
         vm.prank(alice);
         vm.expectRevert(PulseWill.BadBeneficiary.selector);
-        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", p);
+        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", "", p);
     }
 
     function test_create_revertsZeroAllocation() public {
@@ -59,7 +59,7 @@ contract PulseWillTest is Test {
         p[0] = PulseWill.BeneficiaryInput(max, 0, "Maxwell", "");
         vm.prank(alice);
         vm.expectRevert(PulseWill.BadAmount.selector);
-        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", p);
+        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", "", p);
     }
 
     function test_beat_resetsClock() public {
@@ -144,7 +144,7 @@ contract PulseWillTest is Test {
         PulseWill.BeneficiaryInput[] memory p = new PulseWill.BeneficiaryInput[](1);
         p[0] = PulseWill.BeneficiaryInput(address(0), amount, "Sarah", "sarah@mail.com");
         vm.prank(alice);
-        id = pulse.createWill{value: amount}(address(0), amount, interval, "", p);
+        id = pulse.createWill{value: amount}(address(0), amount, interval, "", "", p);
     }
 
     function test_emailHeir_requiresEmail() public {
@@ -152,7 +152,7 @@ contract PulseWillTest is Test {
         p[0] = PulseWill.BeneficiaryInput(address(0), 1 ether, "Sarah", "");
         vm.prank(alice);
         vm.expectRevert(PulseWill.BadBeneficiary.selector);
-        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", p);
+        pulse.createWill{value: 1 ether}(address(0), 1 ether, 7 days, "", "", p);
     }
 
     function test_claimTo_verifierSettlesEmailHeir() public {

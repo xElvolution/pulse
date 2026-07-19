@@ -20,6 +20,7 @@ const willTuple = {
     { name: 'beats', type: 'uint32' },
     { name: 'closed', type: 'bool' },
     { name: 'note', type: 'string' },
+    { name: 'ownerEmail', type: 'string' },
   ],
 } as const
 
@@ -33,6 +34,7 @@ export const pulseAbi = [
       { name: 'amount', type: 'uint256' },
       { name: 'interval', type: 'uint64' },
       { name: 'note', type: 'string' },
+      { name: 'ownerEmail', type: 'string' },
       {
         name: 'people',
         type: 'tuple[]',
