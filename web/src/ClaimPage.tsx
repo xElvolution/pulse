@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAccount, useConnect } from 'wagmi'
+import { useAccount } from 'wagmi'
+import { usePrivy } from '@privy-io/react-auth'
 import { formatEther } from 'viem'
 import gsap from 'gsap'
 import Ekg from './Ekg'
@@ -257,7 +258,7 @@ function FoundWill({ will, indexes, refetch }: { will: Will; indexes: number[]; 
   const { secondsLeft } = useCountdown(will)
   const symbol = useTokenSymbol(will.token)
   const { isConnected, address } = useAccount()
-  const { connect, connectors } = useConnect()
+  const { login } = usePrivy()
   const tx = usePulseWrite(refetch)
   const flatlined = !will.closed && secondsLeft === 0
 
@@ -324,7 +325,7 @@ function FoundWill({ will, indexes, refetch }: { will: Will; indexes: number[]; 
             ) : (
               <>
                 <p className="claim-hint">This is yours. Connect the wallet ending in {b.wallet.slice(-4)} to claim it.</p>
-                <button className="btn primary" onClick={() => connect({ connector: connectors[0] })}>Connect wallet & claim</button>
+                <button className="btn primary" onClick={login}>Connect wallet & claim</button>
               </>
             )}
           </div>

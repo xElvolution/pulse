@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { useAccount, useDisconnect } from 'wagmi'
+import { usePrivy } from '@privy-io/react-auth'
 import gsap from 'gsap'
 import Orb from './Orb'
 import { short } from './components'
@@ -9,7 +10,7 @@ import { short } from './components'
  *  The menu is ALWAYS visible. Only wallet-required pages show the connect gate. */
 export default function AppLayout({ vitality }: { vitality: number }) {
   const { address, isConnected } = useAccount()
-  const { connect, connectors } = useConnect()
+  const { login, logout } = usePrivy()
   const { disconnect } = useDisconnect()
   const location = useLocation()
   const mainRef = useRef<HTMLDivElement>(null)
@@ -40,11 +41,11 @@ export default function AppLayout({ vitality }: { vitality: number }) {
           {isConnected ? (
             <>
               <span className="addr">{short(address!)}</span>
-              <button className="link-btn" onClick={() => disconnect()}>disconnect</button>
+              <button className="link-btn" onClick={() => { logout(); disconnect() }}>disconnect</button>
             </>
           ) : (
-            <button className="btn primary" onClick={() => connect({ connector: connectors[0] })}>
-              Connect wallet
+            <button className="btn primary" onClick={login}>
+              Sign in
             </button>
           )}
         </div>
@@ -55,9 +56,9 @@ export default function AppLayout({ vitality }: { vitality: number }) {
           <div className="connect-gate">
             <div className="gate-orb"><Orb vitality={1} /></div>
             <h2>No pulse detected</h2>
-            <p className="lede">Connect your wallet to create a vault and start your heartbeat.</p>
-            <button className="btn primary" onClick={() => connect({ connector: connectors[0] })}>
-              Connect wallet
+            <p className="lede">Sign in with email or wallet to create a vault and start your heartbeat.</p>
+            <button className="btn primary" onClick={login}>
+              Sign in
             </button>
           </div>
         ) : (
