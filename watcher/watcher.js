@@ -25,7 +25,7 @@ const PULSE_ADDRESS = process.env.PULSE_ADDRESS
 const OWNER_EMAIL = process.env.OWNER_EMAIL
 const POLL_SECONDS = Number(process.env.POLL_SECONDS ?? 60)
 const WARN_FRACTION = Number(process.env.WARN_FRACTION ?? 0.25)
-const APP_URL = process.env.APP_URL ?? 'http://localhost:5199'
+const APP_URL = process.env.APP_URL ?? 'https://pulseonchain.xyz'
 
 if (!PULSE_ADDRESS) {
   console.error('PULSE_ADDRESS is required')
