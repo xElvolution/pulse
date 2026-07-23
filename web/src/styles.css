@@ -197,9 +197,40 @@ input:focus, select:focus, textarea:focus { border-color: var(--alive); }
 
 @media (max-width: 640px) {
   .nav { padding: 1rem 1.2rem; }
+  .nav .brand { font-size: 1.35rem; }
   .section { padding: 4rem 1.2rem; }
   .row-2 { grid-template-columns: 1fr; }
   .vault-meta { gap: 1.2rem; }
+
+  /* hero */
+  .hero .sub { font-size: 0.98rem; margin: 1.1rem auto 1.8rem; }
+
+  /* how-it-works cards + steps */
+  .step { padding: 1.6rem 1.3rem; }
+  .tilt-card { padding: 1.6rem 1.3rem; }
+
+  /* playable demo: stop the title and counter from colliding */
+  .demo-zone { padding: 1.3rem 1.1rem 1rem; }
+  .demo-head { flex-wrap: wrap; gap: 0.35rem; }
+  .demo-title { font-size: 1.15rem; }
+  .demo-beat-btn { width: 100%; justify-content: center; }
+
+  /* claim */
+  .claim-form { padding: 1.4rem 1.2rem; }
+  .claim-alt { margin-top: 2.5rem; }
+
+  /* footer */
+  .big-footer { padding: 3.5rem 1.2rem 1.5rem; }
+  .footer-legal { justify-content: flex-start; }
+}
+
+/* extra-small phones: stack primary CTAs full-width, shrink the sonar */
+@media (max-width: 480px) {
+  .hero .cta-row { width: 100%; max-width: 22rem; margin: 0 auto; }
+  .hero .cta-row .btn { width: 100%; justify-content: center; }
+  .cta-section .cta-row .btn { width: 100%; max-width: 22rem; justify-content: center; }
+  .sonar { height: 230px; }
+  .demo-canvas { height: 200px; }
 }
 
 /* ---------- interactive how-it-works ---------- */
@@ -436,10 +467,61 @@ input:focus, select:focus, textarea:focus { border-color: var(--alive); }
 
 @media (max-width: 860px) {
   .app-shell { grid-template-columns: 1fr; padding-top: 6.5rem; gap: 1.5rem; }
-  .app-menu { position: static; grid-template-columns: 1fr auto; align-items: center; }
+  /* menu becomes a wrapping top bar instead of a fixed non-wrapping row */
+  .app-menu {
+    position: static; display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 0.6rem;
+    padding-bottom: 1.1rem; border-bottom: 1px solid var(--line);
+  }
   .app-menu-orb { display: none; }
-  .app-menu-links { grid-auto-flow: column; gap: 0.4rem; }
-  .app-menu-foot { border-top: none; padding: 0; }
+  .app-menu-links { display: flex; flex-wrap: wrap; gap: 0.4rem; flex: 1 1 auto; }
+  .app-menu-foot { border-top: none; padding: 0; flex: 0 0 auto; }
+}
+
+/* phones: stack everything, kill fixed widths, tighten padding */
+@media (max-width: 560px) {
+  .app-shell { padding: 6rem 1.1rem 3.5rem; gap: 1.25rem; }
+
+  .app-menu-links {
+    width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.4rem;
+  }
+  .app-menu-link {
+    flex-direction: column; gap: 0.25rem; padding: 0.6rem 0.4rem;
+    justify-content: center; text-align: center; font-size: 0.8rem;
+  }
+  .app-menu-foot { width: 100%; justify-items: stretch; }
+  .app-menu-foot .btn.primary { width: 100%; justify-content: center; }
+
+  .app-page-head { margin-bottom: 1.4rem; gap: 1rem; }
+  .app-page-head h2 { font-size: 1.9rem; }
+
+  .vault-card { padding: 1.2rem 1.1rem; }
+  .vault-head .title { font-size: 1.2rem; }
+  .vault-meta { gap: 1rem 1.4rem; }
+  .vault-meta .v.big { font-size: 1.35rem; }
+
+  /* action controls fill the row instead of relying on fixed pixel inputs */
+  .vault-actions { gap: 0.6rem; }
+  .vault-actions .btn { flex: 1 1 auto; justify-content: center; }
+  .vault-actions input { flex: 1 1 110px; width: auto !important; }
+
+  /* beneficiary rows wrap so the amount + claim button never overflow */
+  .heir { flex-wrap: wrap; }
+  .heir-amt { margin-left: 0; text-align: left; }
+  .heir .btn.sm { flex: 1 1 100%; }
+
+  .create-panel { padding: 1.3rem 1.1rem; }
+  .heir-row { padding: 1rem; }
+
+  .modal { padding: 1.4rem; }
+  .modal-actions { flex-direction: column-reverse; }
+  .modal-actions .btn { width: 100%; justify-content: center; }
+
+  .connect-gate { padding: 2rem 0.5rem 4rem; }
+  .connect-gate .gate-orb { width: 210px; height: 210px; }
+  .connect-gate h2 { font-size: 1.9rem; }
+
+  .page-head { padding: 7.5rem 1.1rem 2.5rem; }
 }
 
 /* ---------- claim page split + sonar ---------- */
